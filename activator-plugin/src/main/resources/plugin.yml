@@ -1,0 +1,17 @@
+name: Activator
+main: dev.nefor.activator.plugin.ActivatorPlugin
+version: 
+api-version: 1.16
+load: STARTUP
+authors:
+  - Nefor Labs
+website: https://lic.example.com
+commands:
+  activator:
+    description: Activator license administration
+    usage: /activator <status|refresh|diag|reload>
+    permission: activator.admin
+permissions:
+  activator.admin:
+    description: Allows access to Activator administrative commands
+    default: op

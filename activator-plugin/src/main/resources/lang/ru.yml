@@ -1,0 +1,17 @@
+messages:
+  license-valid: "Лицензия действительна до {expiry}."
+  license-grace: "Лицензия в льготном периоде. Осталось времени: {remaining}."
+  license-invalid: "Проверка лицензии не удалась: {reason}."
+  license-refresh-ok: "Лицензия успешно обновлена."
+  license-refresh-fail: "Не удалось обновить лицензию: {reason}."
+  command-reload: "Конфигурация перезагружена."
+  telemetry-opted-out: "Телеметрия отключена настройками."
+  telemetry-sent: "Телеметрия отправлена ({code})."
+commands:
+  status-header: "Статус Activator: {status}"
+  status-fingerprint: "Отпечаток: {fingerprint}"
+  status-products: "Лицензированные продукты: {products}"
+  status-token-exp: "Срок действия токена: {expiry}"
+  diag-start: "Запуск диагностики..."
+  diag-network-ok: "Сеть доступна ({latency} мс)."
+  diag-network-fail: "Проверка сети не удалась: {reason}."

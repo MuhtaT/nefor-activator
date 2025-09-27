@@ -1,0 +1,17 @@
+messages:
+  license-valid: "License is valid until {expiry}."
+  license-grace: "License in grace period. Time left: {remaining}."
+  license-invalid: "License check failed: {reason}."
+  license-refresh-ok: "License refreshed successfully."
+  license-refresh-fail: "Unable to refresh license: {reason}."
+  command-reload: "Configuration reloaded."
+  telemetry-opted-out: "Telemetry disabled by configuration."
+  telemetry-sent: "Telemetry payload sent ({code})."
+commands:
+  status-header: "Activator status: {status}"
+  status-fingerprint: "Fingerprint: {fingerprint}"
+  status-products: "Licensed products: {products}"
+  status-token-exp: "Token expiry: {expiry}"
+  diag-start: "Running diagnostics..."
+  diag-network-ok: "Network reachability OK ({latency} ms)."
+  diag-network-fail: "Network check failed: {reason}."

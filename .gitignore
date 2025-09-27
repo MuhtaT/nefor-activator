@@ -1,0 +1,32 @@
+# Gradle
+.gradle/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# IDE metadata
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Logs & temp
+*.log
+*.tmp
+hs_err_pid*
+
+# IntelliJ run configs
+run/
+
+# Local config overrides
+*.local.yml
+*.local.properties
+
+# Java tooling
+out/
+

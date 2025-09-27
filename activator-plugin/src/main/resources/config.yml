@@ -1,0 +1,27 @@
+licenseKey: "LIC-XXXXX-YYYYY"
+secret: "client-hmac-secret"
+endpoint:
+  baseUrl: "https://lic.example.com"
+  connectTimeoutMs: 3000
+  readTimeoutMs: 3000
+offline:
+  graceSeconds: 259200
+  refreshSkewSeconds: 900
+  cacheFile: "offline-token.json"
+  crlFile: "crl-cache.json"
+  jwksFile: "jwks-cache.json"
+enforcement:
+  blockOnInvalid: true
+  disableDelayTicks: 1
+  requireCrl: true
+products:
+  - id: "myplugin-pro"
+    maxVersion: "2.9.x"
+fingerprint:
+  salt: "change-me"
+logging:
+  level: "INFO"
+  redactSensitive: true
+i18n: "ru"
+telemetry:
+  enabled: true
