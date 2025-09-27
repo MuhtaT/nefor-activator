@@ -1,6 +1,6 @@
 name: Activator
 main: dev.nefor.activator.plugin.ActivatorPlugin
-version: 
+version: 1.0.0
 api-version: 1.16
 load: STARTUP
 authors:

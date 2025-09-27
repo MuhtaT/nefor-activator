@@ -30,3 +30,6 @@ run/
 # Java tooling
 out/
 
+
+# Local protection test plugin
+ProtectionTest/
