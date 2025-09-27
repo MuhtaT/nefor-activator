@@ -13,14 +13,14 @@ Nefor Activator — это набор из серверного Spigot/Paper п�
 - Git
 
 ## Быстрый старт
-`bash
+```bash
 # клонирование
 git clone https://github.com/Muhtat/nefor-activator.git
 cd nefor-activator
 
 # сборка (API-jar и shaded-plugin jar)
 ./gradlew build
-`
+```
 
 Полученные артефакты:
 - activator-api/build/libs/activator-api-<version>.jar
@@ -37,10 +37,10 @@ GitHub Packages требует авторизацию даже для публи
 ead:packages.
 
 ### Gradle (Kotlin DSL)
-`kotlin
+```kotlin
 repositories {
     maven {
-        url = uri("https://maven.pkg.github.com/<owner>/<repo>")
+        url = uri("https://maven.pkg.github.com/Muhtat/nefor-activator")
         credentials {
             username = findProperty("gpr.user")?.toString() ?: System.getenv("GITHUB_USERNAME")
             password = findProperty("gpr.key")?.toString() ?: System.getenv("GITHUB_TOKEN")
@@ -51,7 +51,7 @@ repositories {
 dependencies {
     compileOnly("dev.nefor.activator:activator-api:1.0.0-SNAPSHOT")
 }
-`
+```
 
 ### Maven (settings.xml)
 `xml
@@ -91,7 +91,7 @@ dependencies {
 | ./gradlew :activator-plugin:shadowJar | Пересборка shaded-плагина |
 
 ## Структура
-`
+
 NeforActivator
  ├── activator-api/
  ├── activator-plugin/
@@ -99,7 +99,7 @@ NeforActivator
  ├── build.gradle.kts
  ├── settings.gradle.kts
  └── .gitignore
-`
+
 
 ## Дополнительно
 - Для публикации на Maven Central нужны OSSRH, домен/GPG, CI.
