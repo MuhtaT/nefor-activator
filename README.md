@@ -1,59 +1,40 @@
-# Nefor Activator
+п»ї# Nefor Activator
 
-Nefor Activator — это комплект из серверного Spigot/Paper плагина и SDK, который обеспечивает лицензионное управление зависимыми плагинами. Activator проверяет валидность токена, распространяет события о смене статуса и отключает плагины, подключённые через API, при потере лицензии.
+Nefor Activator вЂ” СЌС‚Рѕ РЅР°Р±РѕСЂ РёР· СЃРµСЂРІРµСЂРЅРѕРіРѕ Spigot/Paper РїР»Р°РіРёРЅР° Рё SDK, РєРѕС‚РѕСЂС‹Р№ РѕР±РµСЃРїРµС‡РёРІР°РµС‚ Р»РёС†РµРЅР·РёРѕРЅРЅРѕРµ СѓРїСЂР°РІР»РµРЅРёРµ Р·Р°РІРёСЃРёРјС‹РјРё РїР»Р°РіРёРЅР°РјРё. Activator РїСЂРѕРІРµСЂСЏРµС‚ С‚РѕРєРµРЅ, СЂР°СЃСЃС‹Р»Р°РµС‚ СЃРѕР±С‹С‚РёСЏ Рё РѕС‚РєР»СЋС‡Р°РµС‚ РїР»Р°РіРёРЅС‹, РїРѕРґРєР»СЋС‡С‘РЅРЅС‹Рµ С‡РµСЂРµР· API, РїСЂРё РїРѕС‚РµСЂРµ Р»РёС†РµРЅР·РёРё.
 
-## Состав
-- ctivator-api — лёгкая библиотека для разработчиков защищаемых плагинов (интерфейсы, аннотации, утилиты).
-- ctivator-plugin — плагин для сервера, выполняющий проверку лицензии, работу с офлайн-кешем, события, команды и CRL.
-- docs/ — дополнительная документация, в том числе [integration-guide.md](docs/integration-guide.md) с пошаговой интеграцией.
+## РЎРѕСЃС‚Р°РІ
+- activator-api вЂ” Р±РёР±Р»РёРѕС‚РµРєР° РґР»СЏ СЂР°Р·СЂР°Р±РѕС‚С‡РёРєРѕРІ Р·Р°С‰РёС‰Р°РµРјС‹С… РїР»Р°РіРёРЅРѕРІ (РёРЅС‚РµСЂС„РµР№СЃС‹, Р°РЅРЅРѕС‚Р°С†РёРё, СѓС‚РёР»РёС‚С‹).
+- activator-plugin вЂ” СЃРµСЂРІРµСЂРЅС‹Р№ РїР»Р°РіРёРЅ: РїСЂРѕРІРµСЂРєР° Р»РёС†РµРЅР·РёРё, РѕС„Р»Р°Р№РЅ-РєРµС€, СЃРѕР±С‹С‚РёСЏ, РєРѕРјР°РЅРґС‹, CRL.
+- docs/ вЂ” РґРѕРєСѓРјРµРЅС‚Р°С†РёСЏ, РІРєР»СЋС‡Р°СЏ [integration-guide.md](docs/integration-guide.md).
 
-## Требования
+## РўСЂРµР±РѕРІР°РЅРёСЏ
 - Java 17+
-- Gradle 8.1+ (в репозитории лежит Gradle Wrapper)
-- Git для управления версионированием
+- Gradle 8.1+ (РІ РєРѕРјРїР»РµРєС‚ РІС…РѕРґРёС‚ Gradle Wrapper)
+- Git
 
-## Быстрый старт
-`ash
-# Клонирование
-git clone https://github.com/<your-account>/nefor-activator.git
+## Р‘С‹СЃС‚СЂС‹Р№ СЃС‚Р°СЂС‚
+`bash
+# РєР»РѕРЅРёСЂРѕРІР°РЅРёРµ
+git clone https://github.com/Muhtat/nefor-activator.git
 cd nefor-activator
 
-# Сборка (выпускает API-jar и shaded-plugin jar)
+# СЃР±РѕСЂРєР° (API-jar Рё shaded-plugin jar)
 ./gradlew build
 `
 
-Полученные артефакты:
-- ctivator-api/build/libs/activator-api-<version>.jar
-- ctivator-plugin/build/libs/activator-plugin-<version>-all.jar
+РџРѕР»СѓС‡РµРЅРЅС‹Рµ Р°СЂС‚РµС„Р°РєС‚С‹:
+- activator-api/build/libs/activator-api-<version>.jar
+- activator-plugin/build/libs/activator-plugin-<version>-all.jar
 
-## Настройка сервера
-1. Скопируйте ctivator-plugin-*-all.jar в папку plugins/ на сервере.
-2. Запустите сервер один раз — появится plugins/Activator/config.yml.
-3. Заполните licenseKey, secret, параметры endpoint, настройки офлайн-кеша и локализации.
-4. Защищаемые плагины должны указывать зависимость depend: [Activator] и использовать API (см. [integration-guide.md](docs/integration-guide.md)).
+## РќР°СЃС‚СЂРѕР№РєР° СЃРµСЂРІРµСЂР°
+1. РџРѕРјРµСЃС‚РёС‚Рµ activator-plugin-*-all.jar РІ plugins/.
+2. Р—Р°РїСѓСЃС‚РёС‚Рµ СЃРµСЂРІРµСЂ РѕРґРёРЅ СЂР°Р· вЂ” РїРѕСЏРІРёС‚СЃСЏ plugins/Activator/config.yml.
+3. Р—Р°РїРѕР»РЅРёС‚Рµ licenseKey, secret, endpoint, РѕС„Р»Р°Р№РЅ-РїР°СЂР°РјРµС‚СЂС‹ Рё Р»РѕРєР°Р»РёР·Р°С†РёСЋ.
+4. Р—Р°С‰РёС‰Р°РµРјС‹Рµ РїР»Р°РіРёРЅС‹ РґРѕР»Р¶РЅС‹ СѓРєР°Р·С‹РІР°С‚СЊ depend: [Activator] Рё РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ API (СЃРј. [integration-guide.md](docs/integration-guide.md)).
 
-## Публикация API в GitHub Packages
-1. Создайте PAT на GitHub с правами write:packages, ead:packages, epo.
-2. Сохраните учётные данные для Gradle:
-   - Файл %USERPROFILE%\.gradle\gradle.properties:
-     `
-     gpr.user=GITHUB_LOGIN
-     gpr.key=GITHUB_PAT
-     `
-   - Или переменные окружения перед запуском:
-     `powershell
-      = "GITHUB_LOGIN"
-         = "GITHUB_PAT"
-     `
-3. Проверьте блок publishing в ctivator-api/build.gradle.kts (URL вида https://maven.pkg.github.com/<owner>/<repo>).
-4. Опубликуйте артефакт:
-   `ash
-   ./gradlew :activator-api:publish
-   `
-   Аналогично можно добавить публикацию для ctivator-plugin.
-
-## Использование API из GitHub Packages (потребители)
-GitHub Packages требует авторизации даже для публичных репозиториев, поэтому потребителям нужен токен с правами ead:packages.
+## РСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ API РёР· GitHub Packages
+GitHub Packages С‚СЂРµР±СѓРµС‚ Р°РІС‚РѕСЂРёР·Р°С†РёСЋ РґР°Р¶Рµ РґР»СЏ РїСѓР±Р»РёС‡РЅС‹С… СЂРµРїРѕР·РёС‚РѕСЂРёРµРІ, РїРѕСЌС‚РѕРјСѓ РїРѕС‚СЂРµР±РёС‚РµР»СЏРј РЅСѓР¶РµРЅ С‚РѕРєРµРЅ СЃ РїСЂР°РІР°РјРё 
+ead:packages.
 
 ### Gradle (Kotlin DSL)
 `kotlin
@@ -86,7 +67,7 @@ dependencies {
 <repositories>
   <repository>
     <id>github</id>
-    <url>https://maven.pkg.github.com/<owner>/<repo></url>
+    <url>https://maven.pkg.github.com/Muhtat/NeforActivator</url>
   </repository>
 </repositories>
 
@@ -98,30 +79,30 @@ dependencies {
 </dependency>
 `
 
-## Интеграция сторонних плагинов
-- Используйте аннотации @RequiresLicense, @FeatureFlag, утилиты ActivationGuard и LicenseIntegrationSupport.
-- Подробный сценарий в [docs/integration-guide.md](docs/integration-guide.md).
+## РРЅС‚РµРіСЂР°С†РёСЏ СЃС‚РѕСЂРѕРЅРЅРёС… РїР»Р°РіРёРЅРѕРІ
+- РСЃРїРѕР»СЊР·СѓР№С‚Рµ Р°РЅРЅРѕС‚Р°С†РёРё @RequiresLicense, @FeatureFlag, СѓС‚РёР»РёС‚С‹ ActivationGuard, LicenseIntegrationSupport.
+- РџРѕРґСЂРѕР±РЅРѕСЃС‚Рё вЂ” РІ [docs/integration-guide.md](docs/integration-guide.md).
 
-## Полезные команды
-| Команда | Описание |
+## РџРѕР»РµР·РЅС‹Рµ РєРѕРјР°РЅРґС‹
+| РљРѕРјР°РЅРґР° | РћРїРёСЃР°РЅРёРµ |
 | --- | --- |
-| ./gradlew build | Сборка обоих модулей |
-| ./gradlew :activator-api:publish | Публикация API в GitHub Packages |
-| ./gradlew :activator-plugin:shadowJar | Пересборка shaded-плагина |
+| ./gradlew build | РЎР±РѕСЂРєР° РѕР±РѕРёС… РјРѕРґСѓР»РµР№ |
+| ./gradlew :activator-api:publish | РџСѓР±Р»РёРєР°С†РёСЏ API РІ GitHub Packages |
+| ./gradlew :activator-plugin:shadowJar | РџРµСЂРµСЃР±РѕСЂРєР° shaded-РїР»Р°РіРёРЅР° |
 
-## Структура репозитория
+## РЎС‚СЂСѓРєС‚СѓСЂР°
 `
 NeforActivator
- +-- activator-api/      # исходники SDK
- +-- activator-plugin/   # серверный плагин
- +-- docs/               # документация
- +-- build.gradle.kts    # корневой Gradle-скрипт
- +-- settings.gradle.kts
- L-- .gitignore
+ в”њв”Ђв”Ђ activator-api/
+ в”њв”Ђв”Ђ activator-plugin/
+ в”њв”Ђв”Ђ docs/
+ в”њв”Ђв”Ђ build.gradle.kts
+ в”њв”Ђв”Ђ settings.gradle.kts
+ в””в”Ђв”Ђ .gitignore
 `
 
-## Дополнительно
-- Для Maven Central потребуется регистрация в OSSRH, домен/GPG и CI.
-- Для CI/CD можно собрать GitHub Actions workflow: ./gradlew build + ./gradlew publish по тегам.
+## Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅРѕ
+- Р”Р»СЏ РїСѓР±Р»РёРєР°С†РёРё РЅР° Maven Central РЅСѓР¶РЅС‹ OSSRH, РґРѕРјРµРЅ/GPG, CI.
+- CI/CD Р»РµРіРєРѕ РЅР°СЃС‚СЂРѕРёС‚СЊ С‡РµСЂРµР· GitHub Actions (build + publish РїРѕ С‚РµРіР°Рј).
 
-Если возникнут вопросы по публикации или интеграции — создавайте issue/PR или пишите в обсуждения.
+Р’РѕР·РЅРёРєР»Рё РІРѕРїСЂРѕСЃС‹ вЂ” СЃРѕР·РґР°РІР°Р№С‚Рµ issue РёР»Рё PR.
