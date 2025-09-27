@@ -67,7 +67,7 @@ dependencies {
 <repositories>
   <repository>
     <id>github</id>
-    <url>https://maven.pkg.github.com/Muhtat/NeforActivator</url>
+    <url>https://maven.pkg.github.com/Muhtat/nefor-activator</url>
   </repository>
 </repositories>
 

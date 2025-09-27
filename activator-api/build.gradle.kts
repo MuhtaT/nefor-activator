@@ -19,7 +19,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/Muhtat/NeforActivator")
+            url = uri("https://maven.pkg.github.com/Muhtat/nefor-activator")
             credentials {
                 username = findProperty("gpr.user")?.toString() ?: System.getenv("GITHUB_USERNAME")
                 password = findProperty("gpr.key")?.toString() ?: System.getenv("GITHUB_TOKEN")
