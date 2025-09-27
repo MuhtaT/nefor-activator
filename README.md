@@ -34,7 +34,7 @@ cd nefor-activator
 
 ## Использование API из GitHub Packages
 GitHub Packages требует авторизацию даже для публичных репозиториев, поэтому потребителям нужен токен с правами 
-ead:packages.
+read:packages.
 
 ### Gradle (Kotlin DSL)
 ```kotlin
@@ -54,7 +54,7 @@ dependencies {
 ```
 
 ### Maven (settings.xml)
-`xml
+```xml
 <servers>
   <server>
     <id>github</id>
@@ -62,8 +62,8 @@ dependencies {
     <password></password>
   </server>
 </servers>
-`
-`xml
+```
+```xml
 <repositories>
   <repository>
     <id>github</id>
@@ -77,7 +77,7 @@ dependencies {
   <version>1.0.0-SNAPSHOT</version>
   <scope>provided</scope>
 </dependency>
-`
+```
 
 ## Интеграция сторонних плагинов
 - Используйте аннотации @RequiresLicense, @FeatureFlag, утилиты ActivationGuard, LicenseIntegrationSupport.
@@ -89,17 +89,6 @@ dependencies {
 | ./gradlew build | Сборка обоих модулей |
 | ./gradlew :activator-api:publish | Публикация API в GitHub Packages |
 | ./gradlew :activator-plugin:shadowJar | Пересборка shaded-плагина |
-
-## Структура
-
-NeforActivator
- ├── activator-api/
- ├── activator-plugin/
- ├── docs/
- ├── build.gradle.kts
- ├── settings.gradle.kts
- └── .gitignore
-
 
 ## Дополнительно
 - Для публикации на Maven Central нужны OSSRH, домен/GPG, CI.
